@@ -130,7 +130,7 @@ class _Unstacker:
         num_columns = self.removed_level.size
 
         # GH20601: This forces an overflow if the number of cells is too high.
-        num_cells = np.multiply(num_rows, num_columns, dtype=np.int32)
+        num_cells = np.multiply(num_rows, num_columns, dtype=np.int64)
 
         if num_rows > 0 and num_columns > 0 and num_cells <= 0:
             raise ValueError(
